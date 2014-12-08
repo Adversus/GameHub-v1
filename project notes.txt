@@ -1,0 +1,46 @@
+/********************* Completed *********************/
+	1. There should be at least 2 levels of user privilege (from highest to lowest): poster (privilege to post games), player.
+	You may rename these levels if you'd like. You may also add more levels (such as an admin above the level of poster)
+	if you wish.
+	2. All users should have to login before using the system.
+	3. There should be a way for users to log out.
+	5. All users, as long as they are not suspended, should be allowed to play games.
+	6.1 Login/logout
+	
+/********************* Practical *********************/
+	4. There should be a time-out mechanism that terminates a logout after some time period (you decide what) of inactivity.
+	
+/********************* In Progress *********************/
+	6.2 Play games
+	[All Users Allowed to Do This]
+		6.3 Add/Delete/Suspend player-level users
+		6.4 Add/Delete/Suspend poster-level users
+/********************* TODO *********************/
+	
+[player not allowed]
+	6.5 Post or remove games
+[player not allowed]
+	6.6 Change the system-wide time-out limit
+	6.7 Initiate a game instance and wait for other players to join
+	6.8 Join a game instance initiated by another user (may be limited if some games are by invitation only).
+	7. The hub should allow players to download single-player JavaScript-based games which require no further contact with
+	the hub to play.
+	8. The hub should handle the mechanics of initiating a game having more than one player and waiting for others to join,
+	as follows:
+	8.1 The player initiating the game should be able to decide which player (first, second, third, etc.) s/he wants to be.
+	8.2 The mechanism for starting a game, once there are enough players, is as described in class, namely:
+	8.2.1 Once the number of players needed have signed up, each player is given a link which, when clicked, goes to a
+	start-up CGI script for the game. This is the First communication with the game software for this instance of
+	the game.
+	8.2.2 Each link has a query string with the following elements. Elements are separated by ampersands (&) and
+	occur in the order given. Assume that
+	N is the number of players.
+	8.2.2.1 A unique instance identifier (as a string) that uniquely ditainguishes this instance of the game from others.
+	8.2.2.2 A base 10 number (as text) giving the number of players
+	8.2.2.3 N entries, each a unique player id (the id a player uses to logon to the hub). The entries are separated by
+	ampersands. The order gives the player order, namely, the first entry is the first player, the second the
+	second, and so on.
+	8.2.2.4 The user id of the player to whom the link belongs and who clicked it.
+	8.2.2.5 A session key (as a character string) for the player to whom the link belongs.
+	9. Once the game hub has sent links to all players about to start a game, it may forget about the game instance
+	

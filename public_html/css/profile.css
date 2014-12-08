@@ -1,0 +1,155 @@
+.profileBox
+{
+	display:inline-block;
+	vertical-align:top;
+	min-width:22%;
+	margin:0px;
+	padding:0px;
+	border:0px;
+}
+.profileContent
+{
+	position:relative;
+	display:inline-block;
+	vertical-align:top;
+	width:75%;
+	margin:0px 0px 0px 11px;
+	padding:0px;
+	border:0px;
+	overflow:hidden;
+}
+
+.info-bios
+{
+	position:relative;
+	width:100%;
+	display:inline-block;
+	padding: 3px;
+	border: 2px solid #fdc163;
+}
+		
+.navbar
+{
+	display:inline-block;
+	border: 0px solid #fdc163;
+	width: 100%;
+}
+
+.bodynav
+{
+	display:inline-block;
+	font-size: 20pt;
+	font-weight: 700;
+	width: 21%;
+	height: 50px;
+	padding: 10px 10px 0px 10px;
+	color: gold;
+	border: 1px solid #fcd163;
+}
+
+.nav
+{
+	height: 40px; 
+	float:right; 
+	padding: 18px 10px 0px 10px; 
+	color:#626262; 
+	width: auto;
+}
+
+.nav:hover
+{
+	cursor: pointer; 
+	color:#f79700;
+}	
+
+.bodynav:hover
+{
+	cursor: pointer;
+	color: #f79700;
+}
+
+a
+{
+	color: #fdc163;
+}
+
+.myMenu
+{
+	color:#626262;
+	position:absolute;
+	right: 15px;
+	visibility:hidden;
+	margin:0;
+	padding:0;
+	width: 75px;
+	background-color:#262626;
+	text-align: center;
+	padding: 5px;
+} 
+
+.myMenu li 
+{
+	display:inline;
+	float:none;
+}
+
+.myMenu li a:hover 
+{
+	color:#f79700;
+}
+
+.search
+{
+	background-color: #262626;
+	padding: 35px 90px 30px 90px;
+	text-align:left;
+	border:2px solid #fdc163;
+	border-radius:20px;
+	float:left;
+	margin-top:40px;
+}
+
+.upload
+{
+	background-color: #262626;
+	padding: 35px 60px 30px 60px;
+	text-align:left;
+	border:2px solid #fdc163;
+	border-radius:20px;
+	margin-top:40px;
+	width: 50%;
+}
+
+.testmessage
+{
+	background-color: #808080;
+	padding: 2px 2px 2px 2px;
+	text-align: left;
+	border:1px solid #fdc163;
+	auto;
+	float:left;
+	color: black;
+	width: 100%;
+}
+
+.invite
+{
+	background-color: #262626;
+	padding: 10px 10px 10px 10px;
+	border-radius:20px;
+	text-align:left;
+	border:2px solid #fdc163;
+	float:left;
+	margin-top:40px;
+}
+
+.messagesToSend
+{
+	background-color: #262626;
+	padding: 30px 60px 30px 60px;
+	text-align:left;
+	border:2px solid #fdc163;
+	border-radius:20px;
+	margin-top:40px;
+	width: 50%;
+}

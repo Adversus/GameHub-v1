@@ -1,0 +1,178 @@
+<!--Edited by Justin Henderson-->
+
+<script>
+	//** Force redirect if not logged in
+	if (typeof sesKey == 'undefined' || typeof cgiUrl == 'undefined'){
+		window.location = "index.html";
+	}
+	function removeFun(){
+	 if (confirm("Confirm User Removal") == true) {
+
+	 } else {
+
+	 }
+	}
+	function sliderChange(val) {
+		// Use Ajax post to send the adjusted value to PHP or MySQL storage
+		document.getElementById('sliderStatus').innerHTML = val;
+	}
+</script>
+
+<div class="gameColumn">
+<div class="standard">
+	<!--Possible div to center all the fields in the Standard Div -->
+
+	<h1>Administrator Page</h1>
+	
+	<div style="border-top: 1px #fdc163 solid;border-bottom: 1px #fdc163 solid;">
+		<button id="GameBrowseBtn" onclick="onGameBrowseClick()"  type="button">Game Management</button>
+		<button id="GameAddBtn" onclick="onGameAddClick()"  type="button">Add Game</button>
+		<button id="UserManageBtn" onclick="onUserManageClick()"  type="button">User Management</button>
+		<button id="TimeManBtn" onclick="onTimeoutClick()"  type="button">Timeout Management</button>
+		<button id="RegReqBtn" onclick="onRegReqClick()"  type="button">Reg Requests</button>
+		<button id="HistoryBtn" onclick="onHistoryClick()"  type="button">Logs</button>
+	</div>
+	
+	<div id="GameBrowse">
+		<h4>Game Management:</h4>
+		
+		<!--Games will be listed here -->
+		<select id="games" name="gamebrowser" style="min-width:200px;"></select></br>
+			
+		<button id="DeleteGame" onclick="deleteModifyGame()" type="button">Delete Game</button> <!--Deletes Selected Game from Hub -->
+		<button id="ModifyGame" onclick="openModifyGame()" type="button">Modify Game</button>
+	</div>
+	
+    <div id="AddGame">
+		<h4>Add Game:</h4>
+		
+		Game Name<br>
+        <input id="add_gamesListGM" type="text" name="gamebrowserManage"></br>
+        Game URL<br>
+        <input id="add_GameURL" type="text" size="36" type="url"><br>
+        Description<br>
+        <textarea id="add_Desc" cols="40" rows="4"></textarea><br>
+        Minimum Users<br>
+        <input id="add_MinUsers" type="text" size="2" type="text"><br>
+        Max Users<br>
+        <input id="add_MaxUsers" type="text" size="2" type="text"><br>
+        <button id="SaveGameChanges" onclick="gameSendAddClick();" type="button">Upload Game</button><br>
+    </div><!--End AddGame Div-->
+
+	<div id="UserManage">
+		<h4>User Management:</h4>
+
+		<div style="color:white; background-color: #262626; margin: 0px 10px 10px 10px; padding: 15px; border-radius:20px; width:auto; border: 2px solid #fdc163; height: 200px; overflow: scroll;">
+			<table border="1" style=" border-collapse: collapse; border-color: #fdc163;" width="700">
+				<tbody id="playerList">
+					<tr>
+						<th>
+							<a href="">First Name</a>
+						</th>
+
+						<th>
+							<a href="">Last Name</a>
+						</th>
+
+						<th width="91">
+							<a href="">Status</a>
+						</th>
+
+						<th width="61"></th>
+						<th width="91"></th>
+						
+					</tr>
+					<tr>
+						<td>John</td>
+
+						<td>Smith</td>
+
+						<td><select>
+							<option disabled selected>
+								Edit Status
+							</option>
+
+							<option value="admin">
+								Admin
+							</option>
+
+							<option value="player">
+								Player
+							</option>
+
+							<option value="banned">
+								Banned
+							</option>
+						</select></td>
+
+						<td><button onclick="removeFun()">Remove</button></td>
+						<td>
+						<select>
+						 <option disabled selected>
+								Mute Status
+							</option>
+
+							<option value="0">
+								Unmute
+							</option>
+							 <option value="1">
+								Mute
+							</option>
+						</select>
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+		</div><!--End Table -->
+    </div><!--End UserManage Div-->
+
+	<div id="Timeout">
+		<h4>Timeout Management:</h4>
+		(30 Minutes to 12 hours)<br/>
+		<input max="720" min="30" onchange="sliderChange(this.value)" step="1" type="range" value="15">
+		<!--Slider moves one at a time, max is 30-->
+		<span id="sliderStatus">15</span><br>
+		<input type="submit"><br>
+	</div> <!--End Timeout Div-->
+
+	<div id="RegRequests">
+    	<h4>Registration Requests:</h4>
+		<table border="1" style="width:60%">
+			<tbody id="regRequestsTbl">
+				<tr>
+					<th>Email</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Invited</th>
+					<th>&nbsp;</th>
+				</tr>
+			</tbody>
+		</table><!--End RegRequestsTable-->
+    </div><!--End RegRequests Div-->
+    
+    <div id="History">
+		<h4>History</h4>
+		<div id="logRows">
+		</div>
+    </div><!--End History Div-->
+ 
+</div><!--End Standard Div-->
+
+<div id="ModGame" class="standard">
+	<div class="caption">Mod Game:</div>
+	<input id="mod_ID" type="hidden">
+	
+	Game Name<br>
+	<input id="mod_gamesListGM" type="text" name="gamebrowserManage"></br>
+	Game URL<br>
+	<input id="mod_GameURL" type="text" size="36" type="url"><br>
+	Description<br>
+	<textarea id="mod_Desc" cols="40" rows="4"></textarea><br>
+	Minimum Users<br>
+	<input id="mod_MinUsers" type="text" size="2" type="text"><br>
+	Max Users<br>
+	<input id="mod_MaxUsers" type="text" size="2" type="text"><br>
+	<button id="SaveGameChanges" onclick="gameSendModifyClick();" type="button">Save Changes</button><br>
+</div><!--End ModGame Div-->
+
+</div>

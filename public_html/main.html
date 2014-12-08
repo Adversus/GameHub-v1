@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+	<!--Editted by Tony Heimer, Donald Franklin-->
+   <html>
+   <head>
+   <meta charset="UTF-8">
+   <body >
+	<script type="text/javascript">
+		//** Force redirect if not logged in
+		if (typeof sesKey == 'undefined' || typeof cgiUrl == 'undefined'){
+			//** Force redirect if not logged in
+			window.location = "index.html";
+		}
+	</script>
+	<div id="innerBody">
+	</div>
+	
+   	<div class="header">
+		<img src="img/hub5.png" alt="Smiley face" style="padding: 2px 5px 6px 15px; float:left; opacity: .99;" height="50" width="auto"> 
+		<div id="gear" class="nav" style="padding: 18px 45px 0px 10px;">
+		  <i class="fa fa-cog fa-lg"></i>
+		  <ul class="myMenu"> 
+		  	<br>
+		  	<li><span id="btnProfile" class="spanLink">Profile</span></li> 
+		  	<li><span id="btnLogout" class="spanLink">Logout</span></li> 
+		  </ul>
+		</div>
+		<div id="btnGames" class="nav"> GAMES </div>
+		<div id="btnChat" class="nav" style="display:none;"> CHAT </div>
+		<div id="btnForum" class="nav" style="display:none;"> FORUM </div>
+		<div id="btnAdmin" class="nav"> ADMIN </div>
+		<div id="btnDeveloper" class="nav" style="display:none;" > DEVELOPER </div>
+		<div id="btnMain" class="nav"> MAIN </div>
+	</div>
+   </body>
+   </html>

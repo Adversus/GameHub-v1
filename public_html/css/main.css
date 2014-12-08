@@ -1,0 +1,42 @@
+body{font-family:Lato; background-color: black; color:white; padding:0px; margin: 0px; vertical-align:top; overflow-y:scroll;}
+a{color: #fdc163;}
+table{padding: 0px;border-collapse: collapse;}
+caption{}
+.header{font-size: 12pt;  font-weight: 700; border-bottom: 2px solid #fdc163; position:fixed;top:0;left:0;width:100%;background-color:#262626;}
+.login{background-color: #262626; padding: 35px 90px 30px 90px;text-align:left;border:2px solid #fdc163;border-radius:20px;auto; float:left;}
+.margin{float:left;width:32%;}
+.hidden {display:none;}
+.unhidden {display:block;}
+.reg{background-color: #262626; padding: 35px 90px 30px 90px;text-align:left;border:2px solid #fdc163;border-radius:20px;auto; float:left;}
+.login{background-color: #262626; padding: 35px 90px 30px 90px;text-align:left;border:2px solid #fdc163;border-radius:20px;auto; float:left;}
+.header{font-size: 12pt;  font-weight: 700; border-bottom: 2px solid #fdc163; position:fixed;top:0;left:0;width:100%;background-color:#262626;}
+.nav{height: 40px; float:right; padding: 18px 10px 0px 10px; color:#626262; width: auto;}
+.nav:hover{cursor: pointer; color:#f79700;}
+.myMenu{color:#626262; position:absolute; right: 15px; visibility:hidden; margin:0; padding:0; width: 75px; background-color:#262626; text-align: center;padding: 5px;} 
+.myMenu li { display:inline; float:none; }  
+.myMenu li a:hover {color:#f79700; }
+.spanLink {color:#626262;}
+.spanLink:hover{cursor:pointer;color:#f79700;}
+#innerBody{margin-top:62px;}
+#msgBox{height: 205px; overflow-y: scroll;}
+#loginBody{margin-top:40px;}
+#topMenu_LoadGame{display: none;}
+#gameList, #sessionList{overflow-y: scroll;overflow-x:hidden;max-height:93%;min-height:93%;width:100%;}
+.gameColumn{position:relative;width:930px;max-width:930px;overflow-x:hidden;margin-left:auto;margin-right:auto;}
+.standard{margin: 5px; background-color: #262626; padding: 15px 0px 15px 15px;border-radius:20px; border: 2px solid #fdc163;}
+.caption {color:white;text-align:center;border-bottom: 1px solid #fdc163;}
+.gameTR{position:relative;border-top:1px #fdc163 solid;border-bottom: 1px solid #fdc163;border-left:2px rgba(0,0,0,0) solid;border-right:2px rgba(0,0,0,0) solid;}
+.gameTR:hover{background-color:rgba(255,255,255,0.05);}
+.gameTR_Left{display:inline-block;vertical-align:top;max-width:200px}
+.gameTR_Right{position:relative;display:inline-block;vertical-align:top;width: calc(100% - 200px);min-height:100%;}
+.gameInfoBox{max-width:100%;}
+.gameDescBox{font-size:13px;padding:4px;padding-left:8px;padding-right:8px;}
+.sessionLine{position:relative;border-bottom: 1px solid #fdc163;}
+.sessionName, .sessionPlayers, .sessionJoin{display:inline-block;overflow-x:hidden;padding:0px;margin:0px;}
+.sessionName{min-width:60%;max-width:60%;}
+.sessionPlayers{min-width:20%;max-width:30%;text-align:center;}
+.sessionJoin{min-width:20%;max-width:20%;text-align:right;}
+.grayOutCover{position:absolute;top:0px;bottom:0px;left:0px;right:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.4);}
+#playerListBox{border: 1px solid #fdc163;padding:5px;min-height:120px;max-height:120px;width:96%;overflow-y:scroll;overflow-x:hidden;}
+.playerListRow{margin-top:2px;margin-bottom:2px;}
+.bottomMenuButtons{position:absolute;width:95%;bottom:15px;right:0px;padding-right:5px;text-align:right;border-top: 1px solid #fdc163;}

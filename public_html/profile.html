@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--Editted by Zach Shroeder, Donald Franklin-->
+
+<script type="text/javascript">
+	//** Force redirect if not logged in
+	if (typeof sesKey == 'undefined' || typeof cgiUrl == 'undefined'){
+		window.location = "index.html";
+	}
+</script>
+<div class="profileBox">
+	<div class="info-bios">
+		<img src="img/hub5.png" alt = "Profile Picture" height="200" width="200" style="border:1px solid #fdc163; margin-left:50px ; margin-right: 50px; margin-top: 10px;">
+		<p>
+			<h5>Username:</h5> 
+				<span id="profileName"></span>
+			</br>
+			<h5>Status:</h5>
+				<span id="profileLevel"></span></br>
+				<div id="profileBanned"></div>
+			</br>
+			<h5>First Name:</h5>
+				<span id = "profileFirstName"></span>
+			</br>
+			<h5>Last Name:</h5>
+				<span id = "profileLastName"></span>
+			</br>
+		</p>
+	</div>
+</div>
+
+<div class="profileContent">
+	<div id="profilePublicBar" class = "navbar">
+		<div class = "bodynav" id = "home">
+			Home
+		</div>
+		<div class = "bodynav" id = "achievements">
+			Achievements
+		</div>
+		<div class = "bodynav" id = "inbox">
+			Inbox
+		</div>
+		<div class = "bodynav" id = "search">
+			Search
+		</div>
+	</div>
+	<div id="profileUserBar" class = "navbar">
+		<div class = "bodynav" id = "manage">
+			Manage
+		</div>
+		<div class = "bodynav" id = "settings">
+			Settings
+		</div>
+		<div class = "bodynav" id = "upload">
+			Upload
+		</div>
+		<div class = "bodynav" id = "edit">
+			Edit
+		</div>
+	</div>
+
+<!--home page -->
+
+	<div class = "unhidden" id = "homediv" style = "width: 1038px; float: left; padding-left: 10px">
+			All your basic information, including but not limited to statistics. 
+			
+			<div align="center" style = "padding-left: 30%">
+				<div id = "invite" class="invite">
+				Invite a friend
+				<input id = "inviteCode" type = "text" size = "30" />
+				<button id = "randomizeInvite" type = "button" onclick="sendNewRegRequest();"> Randomize </button>
+				</div>
+			</div>
+	</div>
+
+<!--achievements page -->
+
+	<div class = "hidden" id = "achievementsdiv" style = "width: 1038px; float: left;">
+		lots of achievements!!!!!1
+	</div>
+
+<!--inbox page -->
+
+	<div class = "hidden" id = "inboxdiv" style = "width: 1038px; float: left;">
+		</br>
+		<div align = "center"  id = "messagecenterdiv">
+		<h2>Welcome to the Message Center</h2>
+		</br>
+			<div id = "testmessage" class = "testmessage">
+				<span id = "sender" style = "padding-right:20px;">sender</span>
+				<span id = "message">message</span>
+			</div>
+			<div id = "testmessage" class = "testmessage">
+				<span id = "sender" style = "padding-right:20px;">Randy</span>
+				<span id = "message">Wow, the Game Hub looks excellent, keep up the good work!!</span>
+			</div>
+		</div>
+		</br>
+		</br>
+		</br>
+		</br>
+		<div align = "center" id = "messageSenderdiv">
+			<div class="messagesToSend" style = "text-align: center;">
+				<h3 style = "text-align:center;">Send a message</h3>
+				</br>
+				Name of recipient: <input id = "recipient" type = "text" size = "18" />
+				</br>
+				Your message:
+				</br>
+				<textarea id = "messagecontent" rows = "4" cols = "50" style = "text-align: left;">
+				</textarea>
+				</br>
+				<button style="float:right" type="button" id="senditnow">Send</button>
+				</br>
+			</div>
+		</div>
+	</div>
+
+<!--search page -->
+
+	<div class = "hidden" id = "searchdiv" style = "width: 1038px; float: left;">
+		<div align="center" style = "padding-left: 30%">
+			<div class="search">
+				Search for a User<br />
+				<input id="searchedUser" type="text" size="18" />
+				</br>
+				<button style="float:right" type="button" id="searchNow">Search</button>
+				</br>
+			</div>
+		</div>
+	</div>
+	
+<!--manage page -->
+
+	<div class = "hidden" id = "managediv" style = "width: 1038px; float: left;">
+		Manage div
+		</br>
+	</div>
+
+<!--settings page -->
+
+	<div class = "hidden" id = "settingsdiv" style = "width: 1038px; float: left;">
+		settings div
+<<<<<<< Updated upstream
+=======
+		</br>
+		Change account settings: password, username, etc.
+		</br>
+		Change font color. 
+		</br>
+		Font Color: <span id="">
+		Username: <span id="profileName"></span> <button id="changeUsernameBtn" type="button">Change Username</button></br>
+		Password: <button id="changePasswordBtn" type="button">Change Password</button>
+
+
+>>>>>>> Stashed changes
+	</div>
+
+<!--upload page -->
+
+	<div class = "hidden" id = "uploaddiv" style = "width: 1038px; float: left;">
+		<div align="center">
+			<div class="upload" style = "text-align: center;">
+				<h3 style = "text-align:center;">Upload a Game</h3>
+				</br>
+				Name of your game: <input id = "gameName" type = "text" size = "18" />
+				</br>
+				Paste link here: <input id="gameLink" type="text" size="18" />
+				</br>
+				Type description here:
+				</br>
+				<textarea id = "gamedescription" rows = "4" cols = "50" style = "text-align: left;">
+				</textarea>
+				</br>
+				<button style="float:right" type="button" id="UploadNow">Upload</button>
+				</br>
+			</div>
+		</div>
+	</div>
+
+<!--edit page -->
+
+	<div class = "hidden" id = "editdiv" style = "width: 1038px; float: left;">
+		</br>
+		<div style = "padding-left: 20px;">
+			<h5>First Name:</h5>
+				<textarea id = "profileFirstName"></textarea>
+			</br>
+			<h5>Last Name:</h5>
+				<textarea id = "profileLastName"></textarea>
+			</br>
+				<button id = "editSaveChanges">Save Changes</button>
+		</div>
+	</div>
+</div>

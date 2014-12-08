@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--Editted by Tony Heimer-->
+
+<script type="text/javascript">
+	//** Force redirect if not logged in
+	if (typeof sesKey == 'undefined' || typeof cgiUrl == 'undefined'){
+		window.location = "index.html";
+	}
+</script>
+
+<table align="center">
+ <tr>
+   <td style="border-bottom: 0px solid #fdc163; border-top: 0px solid #fdc163;">
+	<div style="background-color: #262626; margin: 0px 10px 10px 10px; padding: 15px; border-radius:20px; f loat:left; width:880px; border: 2px solid #fdc163; ">
+	<table border="1" width="100%"style=" border-collapse: collapse; border-color: #fdc163;">
+		<tr>
+			<th width="200">Image</th>
+			<th> <a href="">A-Z</a></th>
+			<th><a href="">Most Popular</a></th>
+			<th><a href="">Most Recent</a></th>
+			<th>Description</th>
+		</tr>
+		<tbody>
+		<tr>
+		    <td> <img src="img/b0.png" alt="Smiley face" height="125" width="200"> </td>
+			<td> Awesome Game </td>
+			<td> 2</td>
+			<td> 4</td>
+			<td> This game is so awesome!</td>
+		</tr>
+		</tbody>
+	</table>
+	</div>
+   </td>
+ </tr>
+</table>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--Editted by Tony Heimer, Donald Franklin-->
+
+<script type="text/javascript">
+	//** Force redirect if not logged in
+	if (typeof sesKey == 'undefined' || typeof cgiUrl == 'undefined'){
+		window.location = "index.html";
+	}
+</script>
+
+<div class="gameColumn">
+	<!--This is the game list menu -->
+	<div id="topMenu_JoinGame" style="position:relative; vertical-align:top;">
+		<div class="standard" style="display:inline-block; min-width:70%;max-width:70%; height:450px;">
+			<div class="caption">Games</div>
+			<div id="gameList">
+			</div>
+		</div>
+		<div class="standard" style="position:absolute; top:0px; right:0px; min-width:24%;max-width:24%; height:450px;">
+			<div class="caption">Current Sessions</div>
+			<div id="sessionList">
+			</div>
+		</div>
+		
+		<!-- Gray out cover -->
+		<div id="joinGame_Cover" class="grayOutCover" style="display:none;">
+			<!--Game configuration box -->
+			<div class="standard" style="position:relative;margin-left:auto;margin-right:auto;margin-top:50px;width:400px; height:250px;">
+				<div id="start_GameName" class="caption"></div>
+				
+				<input type="hidden" id="start_GameID" value="0">
+				<input type="hidden" id="start_GameURL" value="">
+				
+				Session Name:</br>
+				<input type="text" id="start_SessionName" style="width:200px;margin-left:10px;"></br>
+				
+				Password (optional):</br>
+				<input type="password" id="start_Password" style="width:200px;margin-left:10px;"></br>
+				
+				Players:<span id="start_totalPlayers" style="margin-left:10px;">3</span>&nbsp;/&nbsp;<span id="start_maxPlayers">6</span></br>
+				<div id="playerCount">
+					<input type="range" id="start_PlayerRange" min="1" max="6" value="1" style="margin-left:10px;" oninput="$('#start_totalPlayers').html(event.target.value);">
+				</div>
+				
+				<div class="bottomMenuButtons">
+					<input type="button" value="Cancel" onclick="onStartCancel();">
+					<input type="button" value="Post Session" onclick="waitForGame(event);">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--This is the lobby menu for waiting for members -->
+	<div id="topMenu_Wait">
+		<div class="standard" style="position:relative;width:880px; height:450px;">
+			<div id="wait_GameName" class="caption"></div>
+			
+			<div style="padding-top:5px;padding-bottom:5px;">Session:
+				<span id="wait_SessionName" style="margin-left:10px;"></span>
+			</div>
+			
+			<div style="padding-top:5px;padding-bottom:5px;">Password:
+				<span id="wait_SessionPass" style="margin-left:10px;"></span>
+			</div>
+			
+			<div id="playerCount" style="padding-top:5px;padding-bottom:5px;">Players:
+				<span id="totalPlayers" style="margin-left:10px;">3</span>&nbsp;/&nbsp;<span id="maxPlayers">6</span>
+			</div>
+			
+			<div id="playerListBox" style="margin-left:10px;">
+				<div class="playerListRow">1: Player1</div>
+			</div>
+			
+			<!-- #C0C0FF -->
+			<!-- #C0FFC0 -->
+			<!-- #FFC0C0 -->
+			<div style="padding-top:5px;padding-bottom:5px;">Status:
+				<span id="wait_Status" style="margin-left:10px;color:#C0C0FF;">Waiting for players...</span>
+			</div>
+			
+			<div class="bottomMenuButtons" style="padding-right:20px;">
+				<input type="button" value="Leave Session" onclick="onGameQuit()">
+				<form id="FormStartMP" method="POST">
+					<input type="hidden" name="data">
+					<input type="button" value="Start Game" onclick="onGameReady()">
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!--This is the chat box -->
+   	<div class="standard" style="margin: 0px 10px 10px 10px; padding: 15px; border-radius:20px; width:880px; border: 2px solid #fdc163; height: 230px;">
+   		<div id="msgBox" >
+   		</div>
+		<input type="text" id="txtAddChat" style="width:86%"> <button id="btnAddChat" type="button">Say Message</button> 
+   	</div>
+</div>

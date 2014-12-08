@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+   <html>
+   <head>
+   <meta charset="UTF-8">
+   <title>The Hub Forum</title>
+   <link rel="icon" type="image/x-icon" href="hub5.png" />
+   <link rel="stylesheet" href="css/font-awesome.min.css">
+   <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+   <style type="text/css">
+   body{font-family:Lato; background-color: black; color: white;}
+   h1{font-size: 32pt; text-align:center; color:#f79700;}
+   input[type="text"]{display: block; margin: 0 auto;}
+   .gamePost{display: block; margin: 0 auto;}
+   .hubPost{display: block; margin: 0 auto;}
+   .miscPost{display: block; margin: 0 auto;}
+   .description{background-color: #262626; padding: 15px 35px 15px 35px;text-align:center;border:2px solid #fdc163;border-radius:20px;auto; float:left;}
+   .comments{margin: 0 auto;background-color: #262626; padding: 15px 35px 15px 35px;text-align:center;border:2px solid #fdc163;border-radius:20px;auto;height:300px; width:800px; overflow:auto;}
+   .header{font-size: 12pt;  font-weight: 700; border-bottom: 2px solid #fdc163; position:fixed;top:0;left:0;width:100%;background-color:#262626;}
+   .hidden {display:none;}
+   .unhidden {display:block;}
+   .nav{height: 40px; float:right; padding: 18px 10px 0px 10px; color:#626262; width: auto;}
+   .nav:hover{cursor: pointer; color:#f79700;}
+   a{color: #fdc163;}
+   .myMenu{color:#626262; position:absolute; right: 15px; visibility:hidden; margin:0; padding:0; width: 75px; background-color:#262626; text-align: center;padding: 5px;} 
+   .myMenu li { display:inline; float:none; }  
+   .myMenu li a:hover {color:#f79700; }
+   </style>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script type="text/javascript">
+   	$(document).ready(function() { 
+   	$('.header > #gear').bind('mouseover', openSubMenu); 
+   	$('.header > #gear').bind('mouseout', closeSubMenu); 
+   			function openSubMenu() { 
+   				$(this).find('.myMenu').css('visibility', 'visible'); 
+   			}; 
+   			function closeSubMenu() { 
+   				$(this).find('ul').css('visibility', 'hidden'); }; 
+   			}); 
+    
+    </script>
+   <script type="text/javascript">
+   /*******************************************************
+   Helper functions  #a1a1a1   #1c2f2f
+   ********************************************************/
+   /****************************** 
+   Event Handlers
+   ******************************/
+	
+	window.onload = function()
+	{
+	//*** ONCLICK FOR SWITCHING SCREENS
+	document.getElementById("gamesTab").onclick = showGame;
+	document.getElementById("hubTab").onclick = showHub;
+	document.getElementById("miscTab").onclick = showMisc;
+	
+	//*** ONCLICK FOR CONTACTING SERVER
+	document.getElementById("gamePost").onclick = postGame;
+	document.getElementById("hubPost").onclick = postHub;
+	document.getElementById("miscPost").onclick = postMisc;
+	}
+    
+   /************************************************************************
+   End of JavaScript - Body of HTML Document Follows
+   
+   *************************************************************************/   
+   </script>
+   </head>
+<div class="header">
+		<img src="hub5.png" alt="Smiley face" style="padding: 2px 5px 6px 15px; float:left; opacity: .99;" height="50" width="auto"> 
+		<div id="gear" class="nav" style="padding: 18px 45px 0px 10px;">
+		  <i class="fa fa-cog fa-lg"></i>
+		  <ul class="myMenu"> 
+		  	<br>
+		  	<li><a href="#" style="">Profile</a></li> 
+		  	<li><a href="#">Logout</a></li> 
+		  </ul>
+		</div>
+		<div class="nav" >
+		  GAMES
+		</div>
+		<div class="nav" >
+		  CHAT
+		</div>
+		<div class="nav" >
+		  FORUM
+		</div>
+		<div class="nav">
+		  MAIN
+		</div>
+</div>
+<br><br>
+	<body style = "min-width:900px;">
+		<h1>The Hub Forum</h1>
+			<div style="padding-left: 515px" id="buttons">
+				<button id="gamesTab" type="button">Game Forum</button>
+				<button id="hubTab" type="button">Hub Forum</button>
+				<button id="miscTab" type="button">Misc Tab</button>
+			</div>
+			<br>
+			<div id="games" class="unhidden">
+			<table align="center">
+				<tr>
+					<td>
+						<div class="description">
+							Use this page to post any questions, concerns or general 
+							suggestions for the games on The Hub.
+						</div>
+					</td>
+				</tr>
+			</table>
+			</br></br>
+			<div id="gameChat" class="comments">
+			</div>
+			<input id="gameInput" type="text" size="165"/>
+			</br>
+			<button align="center" type="button" id="gamePost">Post Comment</button>
+			</div>
+			<div id="hub" class="hidden">
+			<table align="center">
+				<tr>
+					<td>
+						<div class="description">
+							Use this page to post any questions, concerns or general 
+							suggestions for The Hub.
+						</div>
+					</td>
+				</tr>
+			</table>
+			</br></br>
+			<div id="hubChat" class="comments">
+			</div>
+			<input id="hubInput" type="text" size="165"/>
+			</br>
+			<button align="center" type="button" id="hubPost">Post Comment</button>
+			</div>
+			<div id="misc" class="hidden">
+			<table   align="center">
+				<tr>
+					<td>
+						<div class="description">
+							Use this page to post any questions, concerns or general 
+							suggestions for miscellaneous topics.
+						</div>
+					</td>
+				</tr>
+			</table>
+			</br></br>
+			<div id="miscChat" class="comments">
+			</div>
+			<input id="miscInput" type="text" size="165"/>
+			</br>
+			<button align="center" type="button" id="miscPost">Post Comment</button>
+			</div>
+			</li>
+		</ul>
+   </body>
+   </html>

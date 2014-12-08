@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--Editted by Tony Heimer, Donald Franklin-->
+<!-- justin -->
+<!-- reid:  HHHIIII!!!!!  Teehee.  :D -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>The Hub</title>
+	<link rel="icon" type="image/x-icon" href="img/hub5.png" />
+	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='css/main.css' rel='stylesheet' type='text/css'>
+	<link href='css/profile.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/admin.js"></script>
+	<script type="text/javascript" src="js/profile.js"></script>
+	<script type="text/javascript" src="js/download.js"></script>
+</head>
+<body>
+	<div class="unhidden" id="contentBody">
+		<div style="text-align: center;">
+			<span style="text-align: center; display: block; font-size: 40pt;">Welcome to the <span style="color: #f79700;">Hub</span></span>
+			<span style="text-align: center; display: block; font-size: 16pt;">The worlds most advanced game hosting system!</span>
+			</br></br>
+			<img src="img/hub5.png" alt="Smiley face" hei ght="42" wi dth="42"> 
+		</div>
+		</br></br>
+		<div id="loginBox">
+			<table align="center">
+			  <tr>
+				<td>
+					<div class="login">
+						Username<br />
+						<input id="loginUser" type="text" size="18" />
+						</br>
+						Password<br />
+						<input id="loginPass" type="password" size="18" />
+						</br>
+						<button style="margin-top: 5px; float:right" type="button" id="log1">Login</button>
+						</br>
+					</div>
+					<div id="loginError" style="color:#FF6666;"></div>
+				</td>
+			  </tr>
+			</table>
+			<div style="text-align: center;">
+				<a style="color: #D66A00;" href="#" onclick="toggleLogin();return false;">Request Access</a> | <a style="color: #D66A00;" href="#" onclick="toggleRegister();return false;">Register</a>
+			</div>
+		</div>
+		<div id="requestLogin" style="display:none;">
+			<div class="standard" style="display:block;max-width:300px;margin-left:auto;margin-right:auto;text-align:center;">
+				<div style="display:inline-block;text-align:left;">
+					Email<br />
+					<input id="reqEmail" type="text" size="18" />
+					</br>
+					First Name<br />
+					<input id="reqFName" type="text" size="18" />
+					</br>
+					Last Name<br />
+					<input id="reqLName" type="text" size="18" />
+					</br>
+					<button style="margin-top: 5px; type="button" onclick="onRegRequest();">Send Request</button>
+				</div>
+			</div>
+			<div id="requestError" style="color:#FF6666;"></div>
+			<div style="text-align: center;">
+				<a style="color: #D66A00;" href="#" onclick="toggleLogin();return false;">Cancel</a>
+			</div>
+		</div>
+		<div id="enterRegCode" style="display:none;">
+			<div class="standard" style="display:block;max-width:300px;margin-left:auto;margin-right:auto;text-align:center;">
+				<div style="display:inline-block;text-align:left;">
+					Registration Code:<br />
+					<input id="regCodeInput" type="text" size="18" />
+					</br>
+					<button style="margin-top: 5px; type="button" onclick="regCodeRedirect();">Enter Code</button>
+				</div>
+			</div>
+			<div id="regCodeError" style="color:#FF6666;"></div>
+			<div style="text-align: center;">
+				<a style="color: #D66A00;" href="#" onclick="toggleRegister();return false;">Cancel</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
